@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <!-- This is where you want to replace with your audio -->
+
+    <body style="background-color: black;">
+        
+        <!-- Rockstar intro video start -->
+        <!---->
+        <div id="introloading">
+            <video autoplay id="intro" preload="auto">
+                <source src="/assets/video/intro.mp4" type="video/mp4">
+            </video>
+            <!--<audio style="display: none;" id="introd" src="/assets/intro.mp3" preload="auto"></audio>-->
+            <div id="logo-small" class="content"
+                style="display: none; align-items: center; justify-content: center; text-align: center;">
+                <img id="logo-small-image" class="animate__animated" src="assets/logo-small.png" style="max-height: 5vh;" alt=""/>
+            </div>
+            <div id="logo-big" class="content"
+                style="display: none; align-items: center; justify-content: center; text-align: center;">
+                <img id="logo-big-image" class="animate__animated bright" src="assets/logo-large.png" style="max-height: 15vh;"
+                    alt=""/>
+            </div>
+        </div>
+        <!---->
+        <!-- Rockstar intro video end -->
+        <div id="loading-main" style="min-height: auto;">
+            <audio style="display: none;" id="music" src="/assets/audio/music.mp3" preload="auto"></audio>
+            <!-- Uncomment q-parallax and comment out q-carousel if you want to use a video background instead -->
+
+                <q-carousel animated v-model="firstslide" :autoplay="secondap" ref="carousel" infinite>
+                    <q-carousel-slide :name="1" img-src="/assets/images/1.png"></q-carousel-slide>
+                    <q-carousel-slide :name="2" img-src="/assets/images/2.png"></q-carousel-slide>
+                    <q-carousel-slide :name="3" img-src="/assets/images/3.png"></q-carousel-slide>
+                    <q-carousel-slide :name="4" img-src="/assets/images/4.png"></q-carousel-slide>
+                </q-carousel>
+
+                <!-- This is where you want to replace with your video -->
+
+                <!--
+                <q-parallax :height="1080">
+                    <template v-slot:media>
+                        <video id="video" width="1920" height="1080" autoplay loop muted>
+                        <source type="video/mp4" src="/assets/video/freestockvideo.mp4"></video>
+                    </template>
+                </q-parallax>
+                -->
+
+                <div class="absolute-right-center ">
+                    <q-card flat style="width: auto; background: transparent;">
+                        <q-card-section class="row items-center wrap" style="padding: 0;">
+                            <q-carousel animated infinite :autoplay="secondap" v-model="secondslide" transition-next="fade" transition-prev="fade" class="bg-transparent text-white">
+                                <q-carousel-slide class="float-right" name="1" style="padding: 0;" class="column no-wrap flex-center">
+                                    <div class="row no-wrap flex-end">
+                                        <div class="column no-wrap" style="width: 26vw; margin: 2vw">
+                                            <div style="width: 26vw; white-space: pre-wrap; margin-bottom: 1.2vh" class="text-left text-h2">
+                                                {{ CarouselTitle1 }}
+                                            </div>
+                                            <div style="width: 26vw; white-space: pre-wrap; margin-bottom: 0.8vh" class="text-left text-h4">
+                                                {{ CarouselSubtitle1 }}
+                                            </div>
+                                            <div style="opacity: 0.9; width: 26vw; white-space: pre-wrap;" class="text-left text-body1">
+                                                {{ CarouselDescription1 }}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <img style="width: 30vw; height: 60vh; object-fit: cover; object-position: 50%;" src="/assets/images/1.png" alt="1"></img>
+                                        </div>
+                                    </div>
+                                </q-carousel-slide>
+                                <!--<q-carousel-slide name="2" class="column no-wrap flex-center">
+                                    <div class="row no-wrap flex-end">
+                                        <div>
+                                            <div style="width: 30vw; white-space: pre-wrap;" class="text-left text-h6">
+                                                {{ CarouselText2 }}
+                                            </div>
+                                            <div style="opacity: 0.9; width: 30vw; white-space: pre-wrap;" class="text-left text-body1">
+                                                {{ CarouselSubText2 }}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <img style="width: 10rem; height: 10rem; " src="/assets/images/2.png"></img>
+                                        </div>
+                                    </div>
+                                </q-carousel-slide> -->
+                            </q-carousel>
+                        </q-card-section>
+                    </q-card>
+                </div>
+
+                <div class="absolute-bottom q-pa-xl">
+                    <q-card flat style="width: auto; background: transparent;">
+                        <q-card-section class="row items-center no-wrap">
+                            <!-- This is where you want to replace with your logo -->
+                            <img class="cursor-none brand-logo" src="/assets/branding/qbcore.svg"></img>
+                        </q-card-section>
+                    </q-card>
+                </div>
+        </div>
+    </body>
+</html>
