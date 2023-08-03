@@ -18,10 +18,35 @@ const introApp = Vue.createApp({
             introApp.unmount()
             introloading.hidden = true
         
-            main.hidden = false
-            load.mount('#loading-main')
+            //main.hidden = false
+            branding.mount('#branding')
+            //load.mount('#loading-main')
         });
     },
+})
+
+const branding = Vue.createApp({
+    mounted() {
+        let brandingDOM = document.getElementById('branding');
+        brandingDOM.classList.add('fadeInCustom');
+        brandingDOM.addEventListener('webkitAnimationEnd', function(e){
+            let animName = e.animationName;
+            if (animName == 'fadeInAnim') {
+                setTimeout(() => {
+                    brandingDOM.classList.remove('fadeInCustom');
+                    brandingDOM.classList.add('fadeOutCustom');
+                }, 50)
+            }
+            else if (animName == 'fadeOutAnim') {
+                branding.unmount();
+                brandingDOM.removeEventListener('webkitAnimationEnd', this);
+                brandingDOM.hidden = true;
+                var main = document.getElementById("loading-main");
+                main.hidden = false;
+                load.mount('#loading-main');
+            }
+        })
+    }
 })
 
 const load = Vue.createApp({
@@ -49,9 +74,9 @@ const load = Vue.createApp({
 
 introApp.use(Quasar, { config: {} })
 load.use(Quasar, { config: {} })
+branding.use(Quasar, { config: {} })
 
 introApp.mount('#introloading')
-
 
 let count = 0;
 let thisCount = 0;

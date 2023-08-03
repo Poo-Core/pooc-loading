@@ -44,6 +44,36 @@ video {
   }
 
   @keyframes fadeInAnim{
-from {opacity: 0;}
-to {opacity: 1;}
+    from {opacity: 0;}
+    to {opacity: 1;}
   }
+
+.fadeOutCustom {
+  animation: fadeOutAnim 5s 1;
+}
+
+@keyframes fadeOutAnim{
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+  .logo-content {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+  }
+
+.logo-name {
+  font-family: 'Luxury Modish', sans-serif;
+  color: white;
+  font-size: 2rem;
+}
+
+.logo-name2 {
+  font-family: 'Luxury Modish', sans-serif;
+  color: white;
+  font-size: 1rem;
+}

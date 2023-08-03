@@ -6,6 +6,10 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"/>
         <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Montserrat&family=Noto+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/luxury-modish" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
@@ -23,15 +27,13 @@
                 <source src="/assets/video/intro.mp4" type="video/mp4">
             </video>
             <!--<audio style="display: none;" id="introd" src="/assets/intro.mp3" preload="auto"></audio>-->
-            <div id="logo-small" class="content"
-                style="display: none; align-items: center; justify-content: center; text-align: center;">
-                <img id="logo-small-image" class="animate__animated" src="assets/logo-small.png" style="max-height: 5vh;" alt=""/>
-            </div>
-            <div id="logo-big" class="content"
-                style="display: none; align-items: center; justify-content: center; text-align: center;">
-                <img id="logo-big-image" class="animate__animated bright" src="assets/logo-large.png" style="max-height: 15vh;"
-                    alt=""/>
-            </div>
+        </div>
+        <div id="branding">
+            <q-card-section style="height: 100%;" class="row justify-center items-center content-center wrap text-center">
+                <!-- This is where you want to replace with your logo -->
+                <img id="logo-small-image" class="cursor-none q-mr-sm animate__animated" src="/assets/branding/HVLogo1.png" style="max-height: 15vh;" alt=""/>
+                <span class="cursor-none q-ml-sm logo-name" id="logo-name">HaneV</span>
+            </q-card-section>
         </div>
         <!---->
         <!-- Rockstar intro video end -->
@@ -40,7 +42,7 @@
             <!-- Uncomment q-parallax and comment out q-carousel if you want to use a video background instead -->
 
                 <q-carousel animated v-model="firstslide" :autoplay="secondap" ref="carousel" infinite>
-                    <q-carousel-slide :name="1" img-src="/assets/images/1.png"></q-carousel-slide>
+                    <q-carousel-slide :name="1" img-src="/assets/images/HaneVSign1.png"></q-carousel-slide>
                     <q-carousel-slide :name="2" img-src="/assets/images/2.png"></q-carousel-slide>
                     <q-carousel-slide :name="3" img-src="/assets/images/3.png"></q-carousel-slide>
                     <q-carousel-slide :name="4" img-src="/assets/images/4.png"></q-carousel-slide>
@@ -103,7 +105,8 @@
                     <q-card flat style="width: auto; background: transparent;">
                         <q-card-section class="row items-center no-wrap">
                             <!-- This is where you want to replace with your logo -->
-                            <img class="cursor-none brand-logo" src="/assets/branding/qbcore.svg"></img>
+                            <img id="logo-small-image" class="cursor-none q-mr-sm animate__animated" src="/assets/branding/HVLogo1_vector.png" style="max-height: 5vh;" alt=""/>
+                            <span class="cursor-none q-ml-xs logo-name2" id="logo-name2">HaneV</span>
                         </q-card-section>
                     </q-card>
                 </div>
